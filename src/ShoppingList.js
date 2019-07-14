@@ -5,13 +5,14 @@ import "./styles.css";
 
 class ShoppingList extends React.Component {
   state = {
-    bread: 8,
+    bread: 20,
     unitPrice: 2.34234
   };
 
   onChange = value => {
     this.setState({ bread: value });
   };
+
   render() {
     const { day, hour, year } = this.props;
     const { bread, unitPrice } = this.state;
