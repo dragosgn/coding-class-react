@@ -1,13 +1,20 @@
 import React from "react";
+import numeral from "numeral";
+
 import "./styles.css";
 
 class ShoppingList extends React.Component {
   state = {
     bread: 8,
-    unitPrice: 2
+    unitPrice: 2.34234
+  };
+
+  onChange = value => {
+    this.setState({ bread: value });
   };
   render() {
     const { day, hour, year } = this.props;
+    const { bread, unitPrice } = this.state;
 
     const myArray = ["mango", "banana", "orange"];
     return (
@@ -21,7 +28,7 @@ class ShoppingList extends React.Component {
           <label for="bread">Panes:</label>
           <input
             onChange={e => {
-              console.log(e.target.value);
+              this.onChange(e.target.value);
             }}
             className="input"
             type="text"
@@ -31,7 +38,7 @@ class ShoppingList extends React.Component {
             value={this.state.bread}
           />
         </div>
-        <p>Coste total: {this.state.bread * this.state.unitPrice}€</p>
+        <p>Coste total: {numeral(bread * unitPrice).format("0.00")}€</p>
       </div>
     );
   }
