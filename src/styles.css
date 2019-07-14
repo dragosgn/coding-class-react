@@ -10,7 +10,7 @@
   font-size: 18px;
 }
 
-.row {
+row {}
   border: 1px solid blue;
   padding: 5px;
   display: flex;
@@ -21,4 +21,4 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5px;
-}
+

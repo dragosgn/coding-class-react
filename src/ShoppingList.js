@@ -8,8 +8,14 @@ class ShoppingList extends React.Component {
   };
   render() {
     const { day, hour, year } = this.props;
+
+    const myArray = ["mango", "banana", "orange"];
     return (
       <div>
+        Numeros:
+        {myArray.map(number => (
+          <p>{`I am a sexy ${number}`}</p>
+        ))}
         <p>I am the shopping list for {`${day} ${hour} ${year}`}</p>
         <div className="row">
           <label for="bread">Panes:</label>
